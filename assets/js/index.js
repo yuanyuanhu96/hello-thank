@@ -32,8 +32,18 @@ tick();
 
 console.log(12);
 
-statusTouch.addEventListener('click', (event) => {
-  x = cloud.biteCloud();
-  console.log('bite! Status', x);
-  rain.biggerRain();
-});
+// statusTouch.addEventListener('click', (event) => {
+//   x = cloud.biteCloud();
+//   console.log('bite! Status', x);
+//   rain.biggerRain();
+// });
+
+statusTouch.addEventListener(
+  'click',
+  function () {
+    x = cloud.biteCloud();
+    console.log('bite! Status', x);
+    rain.biggerRain();
+  },
+  false
+);
