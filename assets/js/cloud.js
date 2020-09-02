@@ -5,8 +5,8 @@ class Cloud {
 
   speedX;
   speedY;
-  cloudStatus = 4;
-  cloudSwidth;
+  cloudStatus = 0;
+  cloudSwidth = 0;
 
   constructor(theX, theY, speedX, speedY) {
     console.log('obama!');
@@ -21,7 +21,6 @@ class Cloud {
     if (speedY !== undefined) {
       this.speedY = speedY;
     }
-    this.biteCloud();
 
     this.loadImages();
   }
@@ -36,7 +35,9 @@ class Cloud {
   }
 
   biteCloud() {
+    this.cloudStatus += 1;
     this.cloudSwidth = this.cloudStatus * 400;
+    return this.cloudStatus;
   }
 
   draw() {

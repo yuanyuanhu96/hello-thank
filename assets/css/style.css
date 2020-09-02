@@ -5,3 +5,14 @@ body {
 #drawing {
   background-color: rgb(255, 255, 255);
 }
+
+.touch-area {
+  position: absolute;
+  width: 980px;
+  height: 980px;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 0, 0, 0);
+  font-size: 28px;
+}

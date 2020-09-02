@@ -1,15 +1,11 @@
-class Rain {
+class Rainbow {
   image;
   x;
   y;
 
-  //   speed = {
-  //     x: 1,
-  //     y: 4
-  //   };
-
   speedX;
   speedY;
+  visibility = false;
 
   constructor(theX, theY, speedX, speedY) {
     console.log('obama!');
@@ -34,12 +30,12 @@ class Rain {
       this.draw();
     };
 
-    this.image.src = './assets/img/rain.png';
+    this.image.src = './assets/img/rainbow.jpg';
   }
 
   draw() {
     ctx.beginPath();
-    ctx.drawImage(this.image, this.x, this.y, 980, 10285);
+    ctx.drawImage(this.image, this.x, this.y, 1468, 980);
   }
 
   move() {
@@ -47,16 +43,15 @@ class Rain {
     this.y += this.speedY;
   }
 
-  when() {
-    return this.y;
+  show() {
+    this.visibility = true;
   }
 
-  biggerRain() {
-    this.speedY += 4;
-  }
 
   tick() {
     this.move();
-    this.draw();
+    if (this.visibility == true) {
+      this.draw();
+    }
   }
 }
