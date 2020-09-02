@@ -1,15 +1,12 @@
-class Rain {
+class Cloud {
   image;
   x;
   y;
 
-  //   speed = {
-  //     x: 1,
-  //     y: 4
-  //   };
-
   speedX;
   speedY;
+  cloudStatus = 4;
+  cloudSwidth;
 
   constructor(theX, theY, speedX, speedY) {
     console.log('obama!');
@@ -24,6 +21,7 @@ class Rain {
     if (speedY !== undefined) {
       this.speedY = speedY;
     }
+    this.biteCloud();
 
     this.loadImages();
   }
@@ -34,12 +32,26 @@ class Rain {
       this.draw();
     };
 
-    this.image.src = './assets/img/rain.png';
+    this.image.src = './assets/img/cloud.png';
+  }
+
+  biteCloud() {
+    this.cloudSwidth = this.cloudStatus * 400;
   }
 
   draw() {
     ctx.beginPath();
-    ctx.drawImage(this.image, this.x, this.y, 980, 10285);
+    ctx.drawImage(
+      this.image,
+      this.cloudSwidth,
+      0,
+      400,
+      301,
+      this.x,
+      this.y,
+      400,
+      301
+    );
   }
 
   move() {

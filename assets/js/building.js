@@ -1,12 +1,7 @@
-class Rain {
+class Building {
   image;
   x;
   y;
-
-  //   speed = {
-  //     x: 1,
-  //     y: 4
-  //   };
 
   speedX;
   speedY;
@@ -34,12 +29,12 @@ class Rain {
       this.draw();
     };
 
-    this.image.src = './assets/img/rain.png';
+    this.image.src = './assets/img/building.png';
   }
 
   draw() {
     ctx.beginPath();
-    ctx.drawImage(this.image, this.x, this.y, 980, 10285);
+    ctx.drawImage(this.image, this.x, this.y, 980, 980);
   }
 
   move() {
